@@ -11,18 +11,6 @@ class Car
 	
 	public $weight;
 	private $year;
-	private $cylinderCapacity;
-	private $price;
-	public function __construct($cylinderCapacity, $price)
-	{
-		$this->cylinderCapacity = $cylinderCapacity;
-		$this->price = $price;
-	}
-
-	// you can use static methods only for objects not classes itself
-	public static function getAvColors() {
-		return $this->availableColors;
-	}
 
 	// setter
 	public function setYear($year)
@@ -51,9 +39,10 @@ class Car
 	// ** you can use unset($object) to manually destruct instances
 }
 
-$myCar = new Car(3000, 10000);
+$myCar = new Car();
 $myCar->setYear(2010);
 $carYear = $myCar->getYear();
 
 // cloning objects
 $yourCar = clone $myCar; // are not the same objects ($yourCar !== $myCar)
+$secondCar = $myCar; // $secondCar === $myCar
