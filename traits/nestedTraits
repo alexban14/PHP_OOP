@@ -1,0 +1,31 @@
+<?php
+
+trait Trait1 {
+	public function method1()
+	{
+		echo "foo";
+	}
+}
+
+trait MyTrait2 {
+	public function method2()
+	{
+		echo "bar";
+	}
+}
+
+trait Trait3 {
+	use Trait1, Trait3;
+
+	public function method3()
+	{
+		echo "3";
+	}
+}
+
+class MyClass
+{
+	use Trait3;
+}
+
+$obj = new MyClass(); // => the object has all 3 methods from the 3 traits
